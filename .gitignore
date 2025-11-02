@@ -1,0 +1,26 @@
+# === Unity ===
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uilds/
+/[Bb]uild/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# === Visual Studio / Rider ===
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.pdb
+.idea/
+
+# === macOS ===
+.DS_Store
+
+# === Unity Generated ===
+*.meta
+*.unityproj
