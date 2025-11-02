@@ -1,0 +1,326 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc66b04a0c9bd14480ccee9d63d0690, type: 3}
+  m_Name: New Crop Life Cycle Template
+  m_EditorClassIdentifier: Assembly-CSharp::UFSM.Runtime.Templates.CropLifeCycleTemplate
+  TemplateName: Crop Life Cycle FSM
+  Description: "Plant growth FSM: Seed \u2192 Sprout \u2192 Growing \u2192 Mature
+    \u2192 Harvested.\nUse 'Plant' trigger to start, time-based progression through
+    stages."
+  Icon: {fileID: 0}
+  States:
+  - StateName: Seed
+    Description: Crop is planted but not yet sprouted
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - StateName: Sprout
+    Description: Crop has just sprouted from ground
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - StateName: Growing
+    Description: Crop is actively growing
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - StateName: Mature
+    Description: Crop is fully grown and ready to harvest
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - StateName: Harvested
+    Description: Crop has been harvested
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - StateName: Withered
+    Description: Crop withered (not harvested in time)
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  Transitions:
+  - FromState: Seed
+    ToState: Sprout
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 4
+      ParameterName: 
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 2
+      RandomChance: 0.5
+    - Type: 0
+      ParameterName: IsWatered
+      BoolValue: 1
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Sprout
+    ToState: Growing
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 4
+      ParameterName: 
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 5
+      RandomChance: 0.5
+    - Type: 0
+      ParameterName: HasSunlight
+      BoolValue: 1
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Growing
+    ToState: Mature
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 4
+      ParameterName: 
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 3
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Mature
+    ToState: Harvested
+    Priority: 10
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 3
+      ParameterName: Harvest
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Mature
+    ToState: Withered
+    Priority: 5
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 4
+      ParameterName: 
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 10
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  Parameters:
+  - Name: Plant
+    Type: 3
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: Harvest
+    Type: 3
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: GrowthStage
+    Type: 1
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: SproutTime
+    Type: 2
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 2
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: GrowthTime
+    Type: 2
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 5
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: MaturationTime
+    Type: 2
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 3
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: WitherTime
+    Type: 2
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 10
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: IsWatered
+    Type: 0
+    DefaultBool: 1
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: HasSunlight
+    Type: 0
+    DefaultBool: 1
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  DefaultUpdateMode: 1
+  DefaultProfile: 2
+  DefaultPriority: 10
+  InitialStateName: Seed

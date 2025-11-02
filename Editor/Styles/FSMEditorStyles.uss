@@ -1,0 +1,95 @@
+/* ============================================================================
+   UFSM - Universal Finite State Machine System for Unity
+   Phase 3: USS Stylesheet for FSM Editor
+   File: Assets/UFSM/Editor/Styles/FSMEditorStyles.uss
+   ============================================================================ */
+
+/* Root Container */
+#root-container {
+    flex-grow: 1;
+    background-color: rgb(40, 40, 40);
+}
+
+/* Toolbar */
+#toolbar-container {
+    background-color: rgb(56, 56, 56);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(26, 26, 26);
+}
+
+/* Graph View */
+#graph-view-container {
+    flex-grow: 1;
+    background-color: rgb(40, 40, 40);
+}
+
+/* Properties Panel */
+#properties-container {
+    background-color: rgb(50, 50, 50);
+    border-left-width: 1px;
+    border-left-color: rgb(26, 26, 26);
+}
+
+/* State Nodes */
+.node {
+    background-color: rgb(64, 64, 64);
+    border-color: rgb(26, 26, 26);
+    border-width: 1px;
+    border-radius: 8px;
+    min-width: 150px;
+}
+
+.node:hover {
+    border-color: rgb(100, 100, 100);
+}
+
+.node:selected {
+    border-color: rgb(68, 192, 255);
+    border-width: 2px;
+}
+
+.node.initial-state {
+    background-color: rgb(40, 80, 40);
+    border-color: rgb(60, 200, 60);
+    border-width: 2px;
+}
+
+/* Transition Edges */
+.edge {
+    --edge-width: 2px;
+}
+
+.edge:hover {
+    --edge-width: 3px;
+}
+
+.edge:selected {
+    --edge-color: rgb(68, 192, 255);
+    --edge-width: 3px;
+}
+
+.transition-edge {
+    --edge-color: rgb(150, 150, 150);
+}
+
+/* Grid Background */
+GridBackground {
+    --grid-background-color: rgb(40, 40, 40);
+    --line-color: rgba(255, 255, 255, 0.1);
+    --thick-line-color: rgba(255, 255, 255, 0.2);
+    --spacing: 25;
+}
+
+/* Welcome Screen */
+#welcome-screen {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tabs */
+ToolbarToggle {
+    border-width: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}

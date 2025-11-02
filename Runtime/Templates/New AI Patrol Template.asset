@@ -1,0 +1,243 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7970aa00d9a384286dd715858d4c84, type: 3}
+  m_Name: New AI Patrol Template
+  m_EditorClassIdentifier: Assembly-CSharp::UFSM.Runtime.Templates.AIPatrolTemplate
+  TemplateName: AI Patrol FSM
+  Description: "AI behavior FSM: Idle \u2192 Patrol \u2192 Chase (when player detected)
+    \u2192 Attack (when in range) \u2192 back to Patrol."
+  Icon: {fileID: 0}
+  States:
+  - StateName: Idle
+    Description: AI is idle, waiting
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: Patrol
+    Description: AI is patrolling waypoints
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: Chase
+    Description: AI is chasing the player
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: Attack
+    Description: AI is attacking the player
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  Transitions:
+  - FromState: Idle
+    ToState: Patrol
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 4
+      ParameterName: 
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 1
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Patrol
+    ToState: Chase
+    Priority: 10
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 0
+      ParameterName: PlayerDetected
+      BoolValue: 1
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Chase
+    ToState: Attack
+    Priority: 10
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 0
+      ParameterName: PlayerInAttackRange
+      BoolValue: 1
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Attack
+    ToState: Chase
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 0
+      ParameterName: PlayerInAttackRange
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Chase
+    ToState: Patrol
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 0
+      ParameterName: PlayerLost
+      BoolValue: 1
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  Parameters:
+  - Name: PlayerDetected
+    Type: 0
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: PlayerInAttackRange
+    Type: 0
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: PlayerLost
+    Type: 0
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: DetectionRange
+    Type: 2
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 10
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: AttackRange
+    Type: 2
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 2
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  DefaultUpdateMode: 0
+  DefaultProfile: 1
+  DefaultPriority: 50
+  InitialStateName: Idle

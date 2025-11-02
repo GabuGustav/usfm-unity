@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f53d3b56e06eed4da1a07777cf3d062, type: 3}
+  m_Name: New Basic 2 State Template
+  m_EditorClassIdentifier: Assembly-CSharp::UFSM.Runtime.Templates.Basic2StateTemplate
+  TemplateName: Basic 2-State FSM
+  Description: 'Simple FSM with two states: Idle and Active.
+
+    Use ''IsActive''
+    parameter to switch between states.'
+  Icon: {fileID: 0}
+  States:
+  - StateName: Idle
+    Description: Object is idle/inactive
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: Active
+    Description: Object is active/working
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  Transitions:
+  - FromState: Idle
+    ToState: Active
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 0
+      ParameterName: IsActive
+      BoolValue: 1
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Active
+    ToState: Idle
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 0
+      ParameterName: IsActive
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  Parameters:
+  - Name: IsActive
+    Type: 0
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  DefaultUpdateMode: 0
+  DefaultProfile: 1
+  DefaultPriority: 0
+  InitialStateName: Idle

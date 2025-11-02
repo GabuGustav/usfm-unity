@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d4c39eebfcb8c46aaedeba5b5918a5, type: 3}
+  m_Name: New Basic 3 State Template
+  m_EditorClassIdentifier: Assembly-CSharp::UFSM.Runtime.Templates.Basic3StateTemplate
+  TemplateName: Basic 3-State FSM (with Cooldown)
+  Description: "FSM with cooldown cycle: Idle \u2192 Active \u2192 Cooldown \u2192
+    Idle.\nUse 'Activate' trigger to start, cooldown timer returns to idle."
+  Icon: {fileID: 0}
+  States:
+  - StateName: Idle
+    Description: Ready to activate
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: Active
+    Description: Currently active/executing
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: Cooldown
+    Description: Cooling down before returning to idle
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  Transitions:
+  - FromState: Idle
+    ToState: Active
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 3
+      ParameterName: Activate
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 0
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Active
+    ToState: Cooldown
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 4
+      ParameterName: 
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 2
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  - FromState: Cooldown
+    ToState: Idle
+    Priority: 0
+    CanInterrupt: 1
+    TransitionDelay: 0
+    LogicOperator: 0
+    ScriptableConditions: []
+    InlineConditions:
+    - Type: 4
+      ParameterName: 
+      BoolValue: 0
+      IntComparisonType: 0
+      IntValue: 0
+      FloatComparisonType: 0
+      FloatValue: 0
+      FloatRangeMin: 0
+      FloatRangeMax: 0
+      TimerDuration: 1
+      RandomChance: 0.5
+    OnTransitionTriggered:
+      m_PersistentCalls:
+        m_Calls: []
+  Parameters:
+  - Name: Activate
+    Type: 3
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 0
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: ActiveDuration
+    Type: 2
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 2
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  - Name: CooldownDuration
+    Type: 2
+    DefaultBool: 0
+    DefaultInt: 0
+    DefaultFloat: 1
+    DefaultString: 
+    SyncToAnimator: 1
+    AnimatorParameterName: 
+  DefaultUpdateMode: 0
+  DefaultProfile: 1
+  DefaultPriority: 0
+  InitialStateName: Idle

@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69280afe141161b4ba7b207ccc098fb5, type: 3}
+  m_Name: PlayerFSM
+  m_EditorClassIdentifier: Assembly-CSharp::UFSM.Runtime.FSMDefinition
+  MachineName: PlayerFSM
+  Description: 
+  TransitionUpdateMode: 0
+  TransitionCheckInterval: 0.1
+  PerformanceProfile: 1
+  Priority: 0
+  States:
+  - StateName: Idle
+    Description: 
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: Walk
+    Description: 
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: Run
+    Description: 
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: NewState
+    Description: 
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: NewState1
+    Description: 
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  - StateName: NewState2
+    Description: 
+    Priority: 0
+    StateBehaviorScript: {fileID: 0}
+    StateBehavior: {fileID: 0}
+    AnimationStateName: 
+    TriggerAnimationOnEnter: 0
+    AnimationTriggerParameter: 
+    EnterSound: {fileID: 0}
+    ExitSound: {fileID: 0}
+    OnEnterEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    OnExitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    EditorPosition: {x: 0, y: 0}
+  Transitions: []
+  Parameters: []
+  SyncWithAnimator: 1
+  AnimatorController: {fileID: 0}
+  AutoCreateAnimatorParameters: 1
+  InitialStateName: Idle
